@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="main.css">
+	<script type="application/javascript" src="qrcode.js"></script>
+    <title>Timer</title>
+</head>
+<body>
+	<main>
+	
+
+	<div id="clock">
+		<div id="digits">
+			<div id="duration"></div>
+			<div id="endTime"></div>
+			<div><span id="countdown"></span></div>
+			<div id="percent"></div>
+			<div id="currentTime"></div>
+			
+		</div>
+		<audio id="sound" src="alarm.mp3" autoplay="autoplay" muted="muted"></audio>
+		<div id="clockface">
+		</div>
+	</div>
+
+	<form id="setTime" action="./index.html">
+		<input type="text" value="" name="min" id="setTimeMin" placeholder="minutes"> : <input type="text" value="" name="sec" id="setTimeSec" placeholder="seconds" /> <input type="submit" name="abc" value="Start Countdown" id="setTimeButton">
+	</form>
+	<button id="pauseCountdown">Pause Countdown</button>
+	<button id="continueCountdown">Continue Countdown</button>
+	<button id="notifyperm">ask for notification permission</button>
+	
+	</main>
+	<script src="./clockwork.js"></script>
+	<aside>
+		<h2>Share</h2>
+		<div id="qrcode"></div>
+		<button id="copyURLintoClipboard">Copy URL into clipboard</button>
+		<script type="text/javascript">
+			var qrcodeDIV = document.getElementById("qrcode");
+			var qrcode = new QRCode(qrcodeDIV, {
+				text: window.location.href,
+				width: 128,
+				height: 128,
+				colorDark : "#000000",
+				colorLight : "#ffffff",
+				correctLevel : QRCode.CorrectLevel.H
+			});
+			
+			function copyIntoClipboard() {
+				navigator.clipboard
+				  .writeText(window.location.href)
+				  .then(
+					(success) => console.log("text copied"),
+					(err) => console.log("error copying text")
+				  );
+			}
+			
+			qrcodeDIV.addEventListener("click", function () {
+				copyIntoClipboard()
+			});
+			document.getElementById("copyURLintoClipboard").addEventListener("click", function () {
+				copyIntoClipboard()
+			});
+		</script>
+	</aside>
+</body>
+</html>

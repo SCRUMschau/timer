@@ -1,0 +1,33 @@
+{
+  "name": "timer",
+  "description": "A simple timer",
+  "homepage": "https://to.do",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://to.de"
+  },
+  "keywords": [
+    "timer"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://to.do"
+  },
+  "license": "AGPL-3.0",
+  "engines": {
+    "node": ">=12"
+  },
+  "scripts": {
+    "eslint": "eslint --ext .js .",
+    "stylelint": "stylelint \"**/*.css\""
+  },
+  "devDependencies": {
+    "eslint": "^8.43.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^16.0.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "stylelint": "^15.8.0",
+    "stylelint-order": "^6.0.3"
+  }
+}
