@@ -1,0 +1,39 @@
+#digits {
+	position: absolute;
+	top: 10%;
+	left: 10%;
+	right: 10%;
+	text-align: center;
+	line-height: 1.5;
+}
+
+#countdown {
+	padding: 1rem;
+	color: white;
+	font-size: 300%;
+	font-weight: bold;
+	line-height: 3;
+	background-color: black;
+	border-radius: 1rem;
+}
+
+#currentTime {
+	font-size: 200%;
+}
+
+#clock {
+	margin: 0 auto;
+	max-width: 500px;
+}
+
+#duration:before {
+	content: '▶️';
+}
+
+#endTime:before {
+	content: '⏰';
+}
+
+#currentTime:before {
+	content: '🕑';
+}
