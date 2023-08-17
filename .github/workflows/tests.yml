@@ -1,0 +1,35 @@
+name: Automated tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  tests:
+    # https://github.com/actions/virtual-environments
+    runs-on: ubuntu-22.04
+
+    steps:
+    - name: Git checkout source code
+      uses: actions/checkout@v3
+
+    # NPM tests
+
+    - name: Uses Node.js
+      uses: actions/setup-node@v3
+      with:
+        # https://nodejs.org/en/about/releases/
+        node-version: '18'
+        cache: 'npm'
+
+    - run: npm ci
+
+    - name: Check JavaScript syntax
+      run: npm run --silent eslint
+
+    - name: Check CSS syntax
+      run: npm run --silent stylelint
+      
